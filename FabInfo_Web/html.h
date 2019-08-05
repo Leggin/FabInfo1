@@ -4,28 +4,35 @@
 
 static const char html[] = R"(
 	<!DOCTYPE html>
-	<html>
+	<html lang="en">
 	  <head>
+	   	<title>Arduino Webpage</title>
 		<style> 
-		  input.wide[type=text]{ 
-			-webkit-appearance: none; 
-			-moz-appearance: none; 
-			display: block; 
-			margin: 0; 
-			width: 100%; 
-			height: 40px; 
-			line-height: 40px; 
-			font-size: 17px; 
-			border: 1px solid #bbb; }
+		  input.wide[type=text]
+                { 
+                    -webkit-appearance: none; 
+                    -moz-appearance: none; 
+                    display: block; 
+                    margin: 0; 
+                    width: 100%; 
+                    height: 40px; 
+                    line-height: 40px; 
+                    font-size: 17px; 
+                    border: 1px solid #bbb;
+                }
+            body 
+                {
+                    margin: auto;
+                    max-width: 50%;
+                }
 		</style>
 	  </head>
 	  <body>
 		<form action="/" method="GET">
-		  Text der FabInfo-Anzeige:<br>
-		  <input type="text" name="text" class="wide" value="%TEXT%">
-		  <input type="text" name="speed" value="%SPEED%">  Geschwindigkeit (Pixel/Sek)<br>
-		  <input type="text" name="repeat" value="%REPEAT%">  Wiederholungen (0: Unendlich)<br>
-		  <input type="submit" value="Text Anzeigen!">
+		  <input type="text" name="text" class="wide" placeholder="Text to Display" value="%TEXT%">
+		  <input type="number" name="speed" placeholder="Speed(Pixel/Sec) " value="%SPEED%">
+		  <input type="number" name="repeat" placeholder="Repeat(0: Infinite) " value="%REPEAT%">
+		  <input type="submit" value="Show Text!">
 		</form>
 	  </body>
 	</html> 
